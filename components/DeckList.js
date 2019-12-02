@@ -7,7 +7,8 @@ class DeckList extends Component {
     renderDeck = ({ item }) => (
         <DeckPreview 
             title={item.title}
-            numberOfCards={item.questions.length} />
+            numberOfCards={item.questions.length}
+            navigation={this.props.navigation} />
     )
 
     render() {

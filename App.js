@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import { StyleSheet, View } from 'react-native'
+import { View } from 'react-native'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import decks from './reducers/decks'
 import { getDecks } from './utils/api'
 import { receiveDecks } from './actions/decks'
 import middleware from './middleware'
-import DeckList from './components/DeckList'
+import TabsRoot from './components/TabNavigator'
+import FlashCardsStatusBar from './components/StatusBar'
 
 const store = createStore(decks, middleware)
 
@@ -21,22 +22,13 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <View style={styles.container}>
-          <DeckList />
+        <View style={{flex: 1}}>
+          <FlashCardsStatusBar backgroundColor='#232323' barStyle='light-content' />
+          <TabsRoot />
         </View>
       </Provider>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})
 
 export default App
