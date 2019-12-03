@@ -37,7 +37,7 @@ class DeckList extends Component {
 
 function mapStateToProps(decks) {
     return {
-        decks: Object.values(decks)
+        decks: Object.values(decks).sort((a, b) => a.title.localeCompare(b.title))
     }
 } 
 
