@@ -29,7 +29,7 @@ class Deck extends Component {
                 <TouchableOpacity
                     style={this.hasCards() ? styles.btn : styles.disabledBtn}
                     onPress={() => this.props.navigation.navigate('Quiz')}
-                    //disabled={!this.hasCards()}
+                    disabled={!this.hasCards()}
                     >
                     <Text style={styles.btnText}>
                         Start quiz
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
         margin: 10,
         width: 200,
         borderRadius: 5,
-        backgroundColor: '#009136' /*green*/,
+        backgroundColor: '#009136',
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         margin: 10,
         width: 200,
         borderRadius: 5,
-        backgroundColor: '#83d6a1' /*green*/,
+        backgroundColor: '#83d6a1',
         alignItems: 'center',
         justifyContent: 'center'
     },
