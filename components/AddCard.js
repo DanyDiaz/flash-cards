@@ -91,11 +91,6 @@ const styles = StyleSheet.create({
         padding: 10,
         textAlignVertical: 'top'
     },
-    errorText: {
-        fontSize: 20,
-        color: '#ff0000',
-        fontStyle: 'italic'
-    },
     submitBtn: {
         padding: 20,
         margin: 10,
@@ -117,11 +112,6 @@ const styles = StyleSheet.create({
     submitText: {
         color: '#ffffff',
         fontSize: 25
-    },
-    confirmationText: {
-        fontSize: 20,
-        color: '#009136',
-        fontStyle: 'italic'
     }
 })
 

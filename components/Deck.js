@@ -58,7 +58,7 @@ class Deck extends Component {
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={this.hasCards() ? styles.btn : styles.disabledBtn}
-                    onPress={() => this.props.navigation.navigate('Quiz')}
+                    onPress={() => this.props.navigation.navigate('Quiz', {'deckTitle': deck.title})}
                     disabled={!this.hasCards()}
                     >
                     <Text style={styles.btnText}>
