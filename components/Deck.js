@@ -7,6 +7,7 @@ import { View,
 } from 'react-native'
 import { connect } from 'react-redux'
 import { handleRemoveDeck } from '../actions/decks'
+import { setLocalNotification, clearLocalNotification } from '../utils/notifications'
 
 class Deck extends Component {
     hasCards = () => {
@@ -58,7 +59,11 @@ class Deck extends Component {
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={this.hasCards() ? styles.btn : styles.disabledBtn}
-                    onPress={() => this.props.navigation.navigate('Quiz', {'deckTitle': deck.title})}
+                    onPress={() => {
+                        clearLocalNotification()
+                            .then(setLocalNotification)
+                        this.props.navigation.navigate('Quiz', {'deckTitle': deck.title})
+                    }}
                     disabled={!this.hasCards()}
                     >
                     <Text style={styles.btnText}>

@@ -4,6 +4,7 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import decks from './reducers/decks'
 import { getDecks } from './utils/api'
+import { setLocalNotification } from './utils/notifications'
 import { receiveDecks } from './actions/decks'
 import middleware from './middleware'
 import TabsRoot from './components/TabNavigator'
@@ -17,6 +18,8 @@ class App extends Component {
       .then((decks) => {
         store.dispatch(receiveDecks(decks))
       })
+    
+    setLocalNotification()
   }
 
   render() {
