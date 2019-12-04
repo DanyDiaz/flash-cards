@@ -85,8 +85,11 @@ class Quiz extends Component {
 
         return (
             <View style={styles.container}>
-                <View style={{alignSelf: 'flex-start'}}>
-                    <Text style={styles.generalText}>{(currentQuestion + 1)}/{cards.length}</Text>
+                <View>
+                    <Text style={styles.generalText}>
+                        {isQuestion ? 'Question ' : 'Answer '}
+                        {(currentQuestion + 1)} of {cards.length}
+                    </Text>
                 </View>
                 <View style={[styles.card, isQuestion ? styles.frontCard : styles.backCard]}>
                     <Text style={[styles.cardText, isQuestion ? styles.frontCardText : styles.backCardText]}>

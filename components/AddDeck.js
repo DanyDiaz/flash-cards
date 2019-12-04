@@ -30,6 +30,7 @@ class AddDeck extends Component {
 
     createNewDeck = () => {
         this.props.addNewDeck(this.state.deckTitle)
+        this.props.navigation.navigate('Deck', {deckTitle: this.state.deckTitle})
         this.setState(() => ({ 
             deckTitle: '',
             created: true

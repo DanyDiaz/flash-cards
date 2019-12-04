@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, FlatList, Text } from 'react-native'
+import { View, FlatList, Text, StyleSheet } from 'react-native'
 import { connect } from 'react-redux'
 import DeckPreview from './DeckPreview'
 
@@ -16,9 +16,13 @@ class DeckList extends Component {
 
         if(decks.length === 0) {
             return (
-                <View>
-                    <Text style={{fontSize: 30, textAlign: 'center'}}>
+                <View style={styles.container}>
+                    <Text style={styles.generalText}>
                         There are no decks for the moment.
+                    </Text>
+                    <View style={{height: 50}}></View>
+                    <Text style={styles.generalText}>
+                        Go to "Add deck" in the tab menu at the bottom to create a new deck.
                     </Text>
                 </View>
             )
@@ -34,6 +38,19 @@ class DeckList extends Component {
         )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    generalText: {
+        fontSize: 30, 
+        textAlign: 'center',
+        fontStyle: 'italic'
+    }
+})
 
 function mapStateToProps(decks) {
     return {
